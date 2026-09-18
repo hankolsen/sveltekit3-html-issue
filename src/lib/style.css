@@ -1,0 +1,124 @@
+* {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--sk-bg-hue: 220;
+	--sk-bg-1: hsl(var(--sk-bg-hue), 10%, 12%);
+	--sk-bg-2: hsl(var(--sk-bg-hue), 12%, 14%);
+	--sk-border: hsl(var(--sk-bg-hue), 15%, 22%);
+	--sk-border-radius: 0.4rem;
+	--sk-fg-1: hsl(var(--sk-bg-hue), 2%, 90%);
+	--sk-fg-2: hsl(var(--sk-bg-hue), 3%, 80%);
+	--sk-fg-accent: #f96743;
+	--sk-page-padding-side: 4.8rem;
+
+	--sk-font-size-h1: 5.4rem;
+	--sk-font-family-heading: 'DM Serif Display', Georgia, serif;
+	--sk-font-h1: 500 var(--sk-font-size-h1) / 1.2 var(--sk-font-family-heading);
+
+	--sk-font-size-h2: 3rem;
+	--sk-font-h2: 500 var(--sk-font-size-h2) / 1.2 var(--sk-font-family-heading);
+
+	--sk-font-family-body: 'EB Garamond', Georgia, serif;
+	--sk-font-size-body: 2.2rem;
+	--sk-font-size-body-small: 2rem;
+	--sk-line-height-body: calc(1.5 * var(--sk-font-size-body));
+	--sk-font-body: 400 var(--sk-font-size-body) / var(--sk-line-height-body)
+		var(--sk-font-family-body);
+
+	--sk-font-family-mono: 'Fira Mono', monospace;
+	--sk-font-size-mono: 1.4rem;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: var(--sk-bg-1);
+	color: var(--sk-fg-2);
+}
+
+h1 {
+	color: var(--sk-fg-1);
+	font: var(--sk-font-h1);
+	margin-bottom: 4rem;
+}
+
+h1 span {
+	color: var(--sk-fg-accent);
+}
+
+h2 {
+	color: var(--sk-fg-1);
+	font: var(--sk-font-h2);
+}
+
+p,
+.raw {
+	font: var(--sk-font-body);
+	text-wrap: pretty;
+	margin: 0.5lh 0;
+}
+
+.hero {
+	left: calc(0.5 * (100% - min(100vw, 120rem)) + var(--sk-page-padding-side));
+	text-align: left;
+	align-items: start;
+	position: absolute;
+	top: calc(8vw - 2rem);
+}
+
+ul {
+	margin: 0;
+	font: var(--sk-font-body);
+}
+
+li {
+	margin: 0;
+	padding-right: 0.5rem;
+	display: block;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: var(--sk-fg-accent);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+pre {
+	background: var(--sk-bg-2);
+	border: 1px solid var(--sk-border);
+	border-radius: var(--sk-border-radius);
+	margin: var(--sk-line-height-body) 0;
+	padding: 0.7rem 1rem;
+	position: relative;
+	overflow: hidden;
+	container-type: inline-size;
+}
+
+pre code {
+	white-space: inherit;
+	font-size: var(--sk-font-size-mono);
+}
+
+code {
+	background: 0 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	top: 0;
+}
+
+.html {
+	font-family: monospace;
+	padding: 0.7rem 1rem;
+}
