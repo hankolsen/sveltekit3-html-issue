@@ -1,42 +1,20 @@
-# sv
+# Issues with {@html} in SvelteKit 3
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Trying to render invalid html using {@html} in SvelteKit 3 results in 500 error on the server.  
+Two examples:
 
-## Creating a project
+## Missing closing tag
 
-If you're seeing this, you've probably already done this step. Congrats!
+```javascript
+const text = '<p>Missing closing tag';
 
-```sh
-# create a new project
-npx sv create my-app
+<div>{@html text}</div>
 ```
 
-To recreate this project with the same configuration:
+## html rendered inside the same tag
 
-```sh
-# recreate this project
-pnpm dlx sv@1.0.0-next.7 create --template minimal --types ts --add prettier eslint sveltekit-adapter="adapter:auto" --install pnpm ./
+```javascript
+const text = `<p>Valid html</p>`;
+
+<p>{@html text}</p>
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
